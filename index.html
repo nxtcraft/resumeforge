@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ResumeKit — Free Resume & Biodata Maker | Download PDF Instantly</title>
+  <meta name="description" content="Create a professional resume or biodata for free. Choose a template, fill in your details, and download as PDF instantly. No signup required. Works in your browser.">
+  <link rel="canonical" href="https://resumekit.in/">
+  <meta property="og:title" content="ResumeKit — Free Resume & Biodata Maker">
+  <meta property="og:description" content="Create a professional resume or biodata free. 3 templates, live preview, PDF download. No signup.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://resumekit.in/">
+  <meta name="twitter:card" content="summary">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebApplication","name":"ResumeKit","url":"https://resumekit.in/","applicationCategory":"BusinessApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"description":"Free resume and biodata maker. Choose a template, fill details, download PDF. No signup needed.","featureList":["3 professional templates","Live preview","PDF download","No data stored on servers","Works offline after load"]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I create a resume for free?","acceptedAnswer":{"@type":"Answer","text":"Use ResumeKit — choose a template, fill in your personal details, experience, education and skills, then click Download PDF. It's completely free and no signup is required."}},{"@type":"Question","name":"What is the difference between a resume and a biodata?","acceptedAnswer":{"@type":"Answer","text":"A resume focuses on professional skills and work experience. A biodata (common in India) includes personal details like date of birth, marital status, and family background, used mainly for job applications in traditional sectors and matrimonial purposes."}},{"@type":"Question","name":"Is my data saved when I use ResumeKit?","acceptedAnswer":{"@type":"Answer","text":"Your data is never sent to any server. Everything is processed in your browser. Your resume data stays on your device only."}}]}
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Resume<span>Kit</span></a>
+</nav>
+
+<div class="app-layout">
+
+  <!-- ── EDITOR PANE ── -->
+  <div class="editor-pane">
+    <div class="editor-header">
+      <h1>✏️ Build Your Resume</h1>
+      <p>Fill in your details — preview updates live on the right</p>
+    </div>
+
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('personal')">Personal</div>
+      <div class="tab" onclick="switchTab('experience')">Experience</div>
+      <div class="tab" onclick="switchTab('education')">Education</div>
+      <div class="tab" onclick="switchTab('skills')">Skills</div>
+      <div class="tab" onclick="switchTab('design')">Design</div>
+    </div>
+
+    <!-- PERSONAL -->
+    <div class="tab-content active" id="tab-personal">
+      <div class="field"><label>Full Name *</label><input type="text" id="p_name" placeholder="Pradeep Kumar" oninput="render()"></div>
+      <div class="field"><label>Job Title / Role</label><input type="text" id="p_role" placeholder="Software Engineer" oninput="render()"></div>
+      <div class="half">
+        <div class="field"><label>Email</label><input type="email" id="p_email" placeholder="you@email.com" oninput="render()"></div>
+        <div class="field"><label>Phone</label><input type="text" id="p_phone" placeholder="+91 9876543210" oninput="render()"></div>
+      </div>
+      <div class="half">
+        <div class="field"><label>City</label><input type="text" id="p_city" placeholder="Bengaluru" oninput="render()"></div>
+        <div class="field"><label>LinkedIn / Website</label><input type="text" id="p_link" placeholder="linkedin.com/in/you" oninput="render()"></div>
+      </div>
+      <div class="field"><label>Professional Summary</label><textarea id="p_summary" placeholder="3–4 lines about yourself, key skills and career goals..." oninput="render()"></textarea></div>
+      <!-- Biodata extras -->
+      <div style="border-top:1px solid var(--border);padding-top:14px;margin-top:4px">
+        <div style="font-size:12px;font-weight:600;color:var(--muted);margin-bottom:10px">BIODATA FIELDS (optional — for traditional job applications)</div>
+        <div class="half">
+          <div class="field"><label>Date of Birth</label><input type="text" id="p_dob" placeholder="01 Jan 1998" oninput="render()"></div>
+          <div class="field"><label>Gender</label><select id="p_gender" onchange="render()"><option value="">—</option><option>Male</option><option>Female</option><option>Other</option></select></div>
+        </div>
+        <div class="half">
+          <div class="field"><label>Marital Status</label><select id="p_marital" onchange="render()"><option value="">—</option><option>Single</option><option>Married</option></select></div>
+          <div class="field"><label>Nationality</label><input type="text" id="p_nationality" placeholder="Indian" oninput="render()"></div>
+        </div>
+        <div class="field"><label>Languages Known</label><input type="text" id="p_langs" placeholder="Hindi, English, Kannada" oninput="render()"></div>
+        <div class="field"><label>Father's Name</label><input type="text" id="p_father" placeholder="Ram Kumar" oninput="render()"></div>
+        <div class="field"><label>Permanent Address</label><textarea id="p_address" rows="2" placeholder="House No, Street, City, State, PIN" oninput="render()"></textarea></div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="tab-content" id="tab-experience">
+      <div id="exp-list"></div>
+      <button class="add-btn" onclick="addExp()">+ Add Experience</button>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="tab-content" id="tab-education">
+      <div id="edu-list"></div>
+      <button class="add-btn" onclick="addEdu()">+ Add Education</button>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="tab-content" id="tab-skills">
+      <div class="field"><label>Technical Skills (comma separated)</label><textarea id="s_tech" placeholder="JavaScript, React, Node.js, Python, SQL, Git" oninput="render()"></textarea></div>
+      <div class="field"><label>Soft Skills (comma separated)</label><textarea id="s_soft" placeholder="Team leadership, Problem solving, Communication" oninput="render()"></textarea></div>
+      <div class="field"><label>Certifications / Achievements</label><textarea id="s_certs" placeholder="AWS Certified Developer, HackerRank 5-star Python..." oninput="render()"></textarea></div>
+      <div class="field"><label>Projects (one per line: Name — Description)</label><textarea id="s_projects" rows="4" placeholder="Portfolio site — Built with React and deployed on Vercel&#10;Task manager — Node.js REST API with MongoDB" oninput="render()"></textarea></div>
+      <div class="field"><label>Hobbies & Interests</label><input type="text" id="s_hobbies" placeholder="Reading, Hiking, Open-source contributions" oninput="render()"></div>
+    </div>
+
+    <!-- DESIGN -->
+    <div class="tab-content" id="tab-design">
+      <div style="font-size:12px;font-weight:600;color:var(--label);margin-bottom:10px">Template</div>
+      <div class="template-grid">
+        <div class="tmpl-card selected" onclick="selectTemplate('classic')" id="tmpl-classic">
+          <div class="tmpl-preview" style="background:#f8fafc;border:1px solid #e2e8f0">
+            <div style="height:10px;background:#1e293b;border-radius:2px;margin-bottom:4px"></div>
+            <div style="height:4px;background:#e2e8f0;border-radius:2px;margin-bottom:2px"></div>
+            <div style="height:4px;background:#e2e8f0;border-radius:2px;width:70%"></div>
+          </div>
+          <div class="tmpl-name">Classic</div>
+        </div>
+        <div class="tmpl-card" onclick="selectTemplate('modern')" id="tmpl-modern">
+          <div class="tmpl-preview" style="background:#f8fafc;border:1px solid #e2e8f0;flex-direction:row;gap:4px">
+            <div style="width:30%;background:#7c3aed;border-radius:2px"></div>
+            <div style="flex:1;display:flex;flex-direction:column;gap:3px;padding:4px 0">
+              <div style="height:4px;background:#e2e8f0;border-radius:2px"></div>
+              <div style="height:4px;background:#e2e8f0;border-radius:2px;width:80%"></div>
+            </div>
+          </div>
+          <div class="tmpl-name">Modern</div>
+        </div>
+        <div class="tmpl-card" onclick="selectTemplate('minimal')" id="tmpl-minimal">
+          <div class="tmpl-preview" style="background:#fff;border:1px solid #e2e8f0">
+            <div style="height:6px;background:#94a3b8;border-radius:1px;width:60%;margin-bottom:4px"></div>
+            <div style="height:3px;background:#f1f5f9;border-radius:1px;margin-bottom:2px"></div>
+            <div style="height:3px;background:#f1f5f9;border-radius:1px;width:80%"></div>
+          </div>
+          <div class="tmpl-name">Minimal</div>
+        </div>
+      </div>
+
+      <div style="font-size:12px;font-weight:600;color:var(--label);margin-bottom:8px">Accent Color</div>
+      <div class="color-row" id="colorRow"></div>
+
+      <div class="field"><label>Font Style</label>
+        <select id="fontStyle" onchange="render()">
+          <option value="serif">Serif (Times — formal, traditional)</option>
+          <option value="sans">Sans-serif (clean, modern)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="editor-actions">
+      <button class="btn btn-primary" onclick="downloadPDF()">⬇ Download PDF</button>
+      <button class="btn btn-secondary" onclick="clearAll()">🗑</button>
+    </div>
+  </div>
+
+  <!-- ── PREVIEW PANE ── -->
+  <div class="preview-pane">
+    <div class="preview-label">Live Preview — updates as you type</div>
+    <div class="resume-paper" id="resumePaper"></div>
+    <div style="margin-top:12px;font-size:11px;color:var(--muted)">🔒 Your data never leaves this browser tab</div>
+  </div>
+
+</div>
+
+<footer>© 2025 ResumeKit — Free resume and biodata maker. No signup, no data stored.</footer>
+
+<script src="js/resume.js"></script>
+</body>
+</html>
