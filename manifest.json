@@ -1,0 +1,15 @@
+{
+  "name": "ResumeForge – Free Resume Builder",
+  "short_name": "ResumeForge",
+  "description": "Build and download a professional resume PDF for free. No signup needed.",
+  "start_url": "/resumeforge/",
+  "scope": "/resumeforge/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#7c3aed",
+  "background_color": "#ffffff",
+  "icons": [
+    { "src": "https://nxtcraft.github.io/resumeforge/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "https://nxtcraft.github.io/resumeforge/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

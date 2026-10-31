@@ -9,6 +9,11 @@
   <title>ResumeForge — Free Resume & Biodata Maker | Download PDF Instantly</title>
   <meta name="description" content="Create a professional resume or biodata for free. Choose a template, fill in your details, and download as PDF instantly. No signup required. Works in your browser.">
   <link rel="canonical" href="https://nxtcraft.github.io/resumeforge/">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#7c3aed">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="ResumeForge">
   <meta property="og:title" content="ResumeForge — Free Resume & Biodata Maker">
   <meta property="og:description" content="Create a professional resume or biodata free. 3 templates, live preview, PDF download. No signup.">
   <meta property="og:type" content="website">
@@ -206,5 +211,6 @@
 </footer>
 
 <script src="js/resume.js"></script>
+<script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('/resumeforge/sw.js');</script>
 </body>
 </html>
