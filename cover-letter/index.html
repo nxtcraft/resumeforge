@@ -202,7 +202,10 @@ details p { padding: 0 14px 12px; font-size: 13px; color: #555; line-height: 1.7
   <!-- PREVIEW -->
   <div class="preview-panel">
     <div class="preview-wrap">
-      <div class="preview-label">Live Preview — updates as you type</div>
+      <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+        <div class="preview-label" style="margin:0;">Live Preview</div>
+        <button onclick="window.print()" style="padding:7px 16px; background:#7c3aed; color:white; border:none; border-radius:8px; font-size:13px; font-weight:700; cursor:pointer;">⬇️ Download PDF</button>
+      </div>
       <div class="letter-page tpl-classic" id="letter-preview"></div>
     </div>
   </div>

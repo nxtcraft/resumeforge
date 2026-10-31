@@ -299,3 +299,48 @@ function clearAll() {
   localStorage.removeItem('rk_data');
   location.reload();
 }
+
+// ── ATS CHECKER ──
+const ATS_STOP = new Set(['a','an','the','is','are','was','were','be','been','being','have','has','had','do','does','did','will','would','could','should','may','might','can','i','we','you','he','she','they','it','this','that','these','those','and','or','but','in','on','at','to','for','of','with','by','from','up','about','into','through','during','before','after','above','below','between','each','both','few','more','most','other','some','such','no','not','only','same','so','than','too','very','just','there','when','where','who','how','all','any','his','her','its','our','your','their','my','as','if','also','must','will','using','use','used','work','working','experience','years','year','strong','good','excellent','ability','skills','skill','knowledge','including','responsible','responsibilities','role','team','company','position','job','candidate','apply','opportunity','please','send','resume','cv','application','required','preferred','required','plus']);
+
+function extractKeywords(text) {
+  return [...new Set(
+    text.toLowerCase()
+      .replace(/[^a-z0-9\s\+#\.]/g, ' ')
+      .split(/\s+/)
+      .filter(w => w.length > 3 && !ATS_STOP.has(w) && !/^\d+$/.test(w))
+  )];
+}
+
+function getResumeText() {
+  const el = document.getElementById('resumePaper');
+  return el ? el.innerText.toLowerCase() : '';
+}
+
+function atsCheck() {
+  const jd = document.getElementById('ats_jd').value;
+  if (!jd.trim() || jd.trim().length < 50) {
+    document.getElementById('ats-results').style.display = 'none';
+    return;
+  }
+
+  const jdKeywords = extractKeywords(jd);
+  if (!jdKeywords.length) return;
+
+  const resumeText = getResumeText();
+  const found = jdKeywords.filter(kw => resumeText.includes(kw));
+  const missing = jdKeywords.filter(kw => !resumeText.includes(kw));
+
+  const score = Math.round((found.length / jdKeywords.length) * 100);
+
+  document.getElementById('ats-score').textContent = score + '%';
+  document.getElementById('ats-score-label').textContent = score >= 70 ? '✅ Good ATS Match' : score >= 40 ? '⚠️ Moderate Match' : '❌ Low Match';
+  document.getElementById('ats-score-sub').textContent = found.length + ' of ' + jdKeywords.length + ' keywords from JD found in resume';
+  document.getElementById('ats-found').innerHTML = found.length
+    ? found.map(k => `<span style="background:#dcfce7;padding:2px 7px;border-radius:12px;margin:2px;display:inline-block;">${k}</span>`).join('')
+    : '<em>None yet — fill in your resume details first</em>';
+  document.getElementById('ats-missing').innerHTML = missing.length
+    ? missing.map(k => `<span style="background:#ffedd5;padding:2px 7px;border-radius:12px;margin:2px;display:inline-block;">${k}</span>`).join('')
+    : '<em>🎉 All key terms covered!</em>';
+  document.getElementById('ats-results').style.display = 'block';
+}

@@ -44,6 +44,7 @@
       <div class="tab" onclick="switchTab('education')">Education</div>
       <div class="tab" onclick="switchTab('skills')">Skills</div>
       <div class="tab" onclick="switchTab('design')">Design</div>
+      <div class="tab" onclick="switchTab('ats')" style="color:#16a34a;font-weight:700;">ATS ✓</div>
     </div>
 
     <!-- PERSONAL -->
@@ -140,6 +141,31 @@
       </div>
     </div>
 
+    <!-- ATS CHECKER -->
+    <div class="tab-content" id="tab-ats">
+      <div style="font-size:13px; font-weight:700; color:#15803d; margin-bottom:8px;">🎯 ATS Keyword Checker</div>
+      <p style="font-size:12px; color:#555; line-height:1.6; margin-bottom:12px;">Paste the job description below. The tool finds keywords the recruiter's ATS system will scan for and shows which ones are already in your resume.</p>
+      <div class="field"><label>Paste Job Description Here</label><textarea id="ats_jd" rows="8" placeholder="Paste the full job description here — responsibilities, requirements, skills section..." style="font-size:12px;" oninput="atsCheck()"></textarea></div>
+      <div id="ats-results" style="display:none; margin-top:14px;">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+          <div style="font-size:28px; font-weight:800; color:#15803d;" id="ats-score">--%</div>
+          <div>
+            <div style="font-size:13px; font-weight:700; color:#1a1a2e;" id="ats-score-label">ATS Match Score</div>
+            <div style="font-size:11px; color:#555;" id="ats-score-sub">keywords from JD found in resume</div>
+          </div>
+        </div>
+        <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:8px; padding:12px; margin-bottom:10px;">
+          <div style="font-size:11px; font-weight:700; color:#15803d; margin-bottom:6px;">✅ KEYWORDS FOUND IN YOUR RESUME</div>
+          <div id="ats-found" style="font-size:12px; color:#166534; line-height:1.8;"></div>
+        </div>
+        <div style="background:#fff7ed; border:1px solid #fed7aa; border-radius:8px; padding:12px;">
+          <div style="font-size:11px; font-weight:700; color:#c2410c; margin-bottom:6px;">❌ MISSING KEYWORDS — ADD TO YOUR RESUME</div>
+          <div id="ats-missing" style="font-size:12px; color:#9a3412; line-height:1.8;"></div>
+        </div>
+        <p style="font-size:11px; color:#888; margin-top:8px; line-height:1.5;">Tip: Add missing keywords naturally into your summary, skills, or experience descriptions. Don't keyword-stuff — write naturally but be specific.</p>
+      </div>
+    </div>
+
     <div class="editor-actions">
       <button class="btn btn-primary" onclick="downloadPDF()">⬇ Download PDF</button>
       <button class="btn btn-secondary" onclick="clearAll()">🗑</button>
@@ -148,7 +174,10 @@
 
   <!-- ── PREVIEW PANE ── -->
   <div class="preview-pane">
-    <div class="preview-label">Live Preview — updates as you type</div>
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px; padding:0 2px;">
+      <div class="preview-label" style="margin:0;">Live Preview</div>
+      <button onclick="downloadPDF()" style="padding:7px 16px; background:#7c3aed; color:white; border:none; border-radius:8px; font-size:13px; font-weight:700; cursor:pointer;">⬇️ Download PDF</button>
+    </div>
     <div class="resume-paper" id="resumePaper"></div>
     <div style="margin-top:12px;font-size:11px;color:var(--muted)">🔒 Your data never leaves this browser tab</div>
   </div>
