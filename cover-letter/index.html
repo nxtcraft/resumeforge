@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cover Letter Generator — Free Template & Builder | ResumeKit</title>
+<meta name="description" content="Free cover letter generator. Fill in your details, choose a format, preview instantly and download as PDF. No signup, no watermark. Professional cover letter in 2 minutes.">
+<meta name="keywords" content="cover letter format, cover letter template free, cover letter for job application, how to write a cover letter, cover letter generator free, cover letter builder online, cover letter sample, cover letter example india, job application letter format, cover letter pdf download, professional cover letter template, cover letter format for freshers">
+<link rel="canonical" href="https://nxtcraft.github.io/resumekit/cover-letter/">
+<meta property="og:title" content="Cover Letter Generator — Free Template & Builder">
+<meta property="og:description" content="Write a professional cover letter in 2 minutes. Fill the form, preview live, download PDF. Free, no signup.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../css/main.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Cover Letter Generator",
+  "url": "https://nxtcraft.github.io/resumekit/cover-letter/",
+  "description": "Free cover letter generator. Fill the form, preview and download PDF.",
+  "applicationCategory": "BusinessApplication",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What should a cover letter include?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A cover letter should include: your contact details, the date, the hiring manager's name and company, an opening paragraph stating the role and why you're interested, a middle paragraph highlighting your relevant skills and experience, a closing paragraph with a call to action, and your name and signature. It should be one page, 3–4 paragraphs, and tailored to the specific role." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long should a cover letter be?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A cover letter should be one page maximum — typically 3–4 short paragraphs totaling 250–400 words. Recruiters spend 30 seconds or less reading a cover letter, so brevity and relevance matter more than length. Use bullet points to highlight key achievements if the role requires many specific skills." }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I write a different cover letter for each job?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — always customise your cover letter for each role. At minimum, personalise the company name, job title, hiring manager's name, and the specific reason you want to work at that company. Generic cover letters that don't address the specific role are immediately obvious to recruiters and reduce your chances." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a cover letter necessary for job applications in India?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For MNC and tech company applications, a cover letter significantly increases your chances. For walk-in interviews and traditional companies, it is less common but still differentiates you. LinkedIn Easy Apply, Naukri and similar portals sometimes have an optional cover letter field — always fill it in, as it shows initiative." }
+    }
+  ]
+}
+</script>
+<style>
+.page-wrap { display: grid; grid-template-columns: 400px 1fr; min-height: calc(100vh - 60px); }
+.form-panel { padding: 20px; background: white; border-right: 1px solid #e2e8f0; overflow-y: auto; max-height: calc(100vh - 60px); }
+.preview-panel { background: #f1f5f9; display: flex; flex-direction: column; align-items: center; padding: 24px; overflow-y: auto; max-height: calc(100vh - 60px); }
+.preview-wrap { width: 100%; max-width: 650px; }
+.preview-label { font-size: 12px; color: #475569; font-weight: 600; margin-bottom: 10px; text-align: center; }
+
+.section-head { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #7c3aed; background: #f5f3ff; padding: 6px 12px; border-radius: 6px; margin: 16px 0 10px; }
+.section-head:first-child { margin-top: 0; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+.field-row.full { grid-template-columns: 1fr; }
+.field { display: flex; flex-direction: column; gap: 3px; }
+.field label { font-size: 11px; font-weight: 600; color: #555; }
+.field input, .field select, .field textarea { border: 1px solid #ddd; border-radius: 7px; padding: 7px 10px; font-size: 13px; font-family: inherit; width: 100%; transition: border .15s; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: #7c3aed; }
+.field textarea { min-height: 72px; resize: vertical; line-height: 1.5; }
+
+.tpl-row { display: flex; gap: 8px; margin-bottom: 10px; }
+.tpl-btn { flex: 1; padding: 8px; border: 2px solid #e2e8f0; border-radius: 8px; background: white; cursor: pointer; font-size: 12px; font-weight: 600; color: #666; transition: all .15s; }
+.tpl-btn.active, .tpl-btn:hover { border-color: #7c3aed; color: #7c3aed; background: #f5f3ff; }
+
+.btn-dl { width: 100%; padding: 13px; background: #7c3aed; color: white; border: none; border-radius: 10px; font-size: 15px; font-weight: 700; cursor: pointer; margin-top: 16px; }
+.btn-dl:hover { background: #6d28d9; }
+
+/* Preview — letter styles */
+.letter-page { background: white; box-shadow: 0 4px 24px rgba(0,0,0,.08); padding: 48px 52px; min-height: 720px; font-family: 'Georgia', serif; font-size: 13.5px; line-height: 1.7; color: #1a1a2e; border-radius: 4px; }
+
+/* Classic */
+.tpl-classic .letter-header { margin-bottom: 28px; }
+.tpl-classic .sender-name { font-size: 20px; font-weight: 700; color: #1a1a2e; margin-bottom: 4px; font-family: 'Georgia', serif; }
+.tpl-classic .sender-info { font-size: 12px; color: #666; line-height: 1.6; }
+.tpl-classic .letter-date { margin-bottom: 18px; font-size: 13px; }
+.tpl-classic .recipient { margin-bottom: 22px; font-size: 13px; line-height: 1.7; }
+.tpl-classic .letter-body p { margin-bottom: 14px; text-align: justify; }
+.tpl-classic .letter-sign { margin-top: 28px; }
+.tpl-classic .sign-name { font-weight: 700; margin-top: 6px; }
+
+/* Modern */
+.tpl-modern .letter-header { display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 18px; margin-bottom: 22px; border-bottom: 3px solid #7c3aed; }
+.tpl-modern .sender-name { font-size: 20px; font-weight: 800; color: #1a1a2e; font-family: inherit; margin-bottom: 3px; }
+.tpl-modern .sender-info { font-size: 11.5px; color: #555; line-height: 1.7; }
+.tpl-modern .letter-date { text-align: right; font-size: 12px; color: #888; }
+.tpl-modern .recipient { margin-bottom: 20px; font-size: 13px; line-height: 1.7; color: #333; }
+.tpl-modern .letter-body p { margin-bottom: 13px; }
+.tpl-modern .letter-sign { margin-top: 24px; }
+.tpl-modern .sign-name { font-weight: 700; color: #7c3aed; margin-top: 6px; }
+
+/* Minimal */
+.tpl-minimal { font-family: 'Arial', sans-serif; }
+.tpl-minimal .letter-header { border-left: 3px solid #333; padding-left: 14px; margin-bottom: 24px; }
+.tpl-minimal .sender-name { font-size: 18px; font-weight: 700; margin-bottom: 3px; }
+.tpl-minimal .sender-info { font-size: 12px; color: #555; line-height: 1.6; }
+.tpl-minimal .letter-date { margin-bottom: 18px; font-size: 13px; color: #666; }
+.tpl-minimal .recipient { margin-bottom: 22px; font-size: 13px; line-height: 1.7; }
+.tpl-minimal .letter-body p { margin-bottom: 13px; }
+.tpl-minimal .letter-sign { margin-top: 24px; }
+.tpl-minimal .sign-name { font-weight: 700; margin-top: 6px; }
+
+.seo-section { max-width: 900px; margin: 40px auto; padding: 0 20px 40px; }
+.seo-section h2 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+.seo-section h3 { font-size: 16px; font-weight: 700; margin: 18px 0 8px; }
+.seo-section p, .seo-section li { font-size: 14px; color: #333; line-height: 1.7; }
+.seo-section ul, .seo-section ol { padding-left: 22px; margin-bottom: 10px; }
+details { border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; margin-bottom: 8px; }
+details summary { padding: 12px 14px; cursor: pointer; font-weight: 600; font-size: 14px; }
+details p { padding: 0 14px 12px; font-size: 13px; color: #555; line-height: 1.7; }
+
+@media print {
+  .site-header, nav, .form-panel, .preview-label, .btn-dl, footer, .seo-section { display: none !important; }
+  body { background: white; }
+  .page-wrap { display: block; }
+  .preview-panel { padding: 0; background: white; max-height: none; }
+  .letter-page { box-shadow: none; padding: 24px 28px; }
+}
+@media (max-width: 860px) {
+  .page-wrap { grid-template-columns: 1fr; }
+  .form-panel, .preview-panel { max-height: none; }
+}
+</style>
+</head>
+<body>
+<div class="site-header">
+  <nav>
+    <a class="nav-logo" href="../">Resume<span>Kit</span></a>
+    <a href="../" style="font-size:13px; color:rgba(255,255,255,.7); text-decoration:none; margin-left:16px;">← Resume Builder</a>
+    <span style="font-size:13px; color:white; margin-left:16px; font-weight:600;">Cover Letter</span>
+  </nav>
+</div>
+
+<div class="page-wrap">
+  <!-- FORM -->
+  <div class="form-panel">
+    <div class="section-head">Template</div>
+    <div class="tpl-row">
+      <button class="tpl-btn active" data-tpl="classic" onclick="setTpl('classic')">📜 Classic</button>
+      <button class="tpl-btn" data-tpl="modern" onclick="setTpl('modern')">✨ Modern</button>
+      <button class="tpl-btn" data-tpl="minimal" onclick="setTpl('minimal')">📄 Minimal</button>
+    </div>
+
+    <div class="section-head">Your Details</div>
+    <div class="field-row full"><div class="field"><label>Your Full Name *</label><input type="text" id="f_name" placeholder="e.g. Priya Sharma" oninput="update()"></div></div>
+    <div class="field-row">
+      <div class="field"><label>Email</label><input type="text" id="f_email" placeholder="priya@email.com" oninput="update()"></div>
+      <div class="field"><label>Phone</label><input type="text" id="f_phone" placeholder="+91 98765 43210" oninput="update()"></div>
+    </div>
+    <div class="field-row full"><div class="field"><label>LinkedIn / Portfolio URL</label><input type="text" id="f_url" placeholder="linkedin.com/in/priya" oninput="update()"></div></div>
+    <div class="field-row full"><div class="field"><label>City</label><input type="text" id="f_city" placeholder="Bengaluru, Karnataka" oninput="update()"></div></div>
+
+    <div class="section-head">Job Details</div>
+    <div class="field-row full"><div class="field"><label>Job Title Applying For *</label><input type="text" id="f_jobtitle" placeholder="e.g. Senior Product Manager" oninput="update()"></div></div>
+    <div class="field-row full"><div class="field"><label>Company Name *</label><input type="text" id="f_company" placeholder="e.g. Razorpay" oninput="update()"></div></div>
+    <div class="field-row full"><div class="field"><label>Hiring Manager's Name</label><input type="text" id="f_hm" placeholder="e.g. Rahul Gupta (or leave blank)" oninput="update()"></div></div>
+    <div class="field-row full"><div class="field"><label>Date</label><input type="text" id="f_date" oninput="update()"></div></div>
+
+    <div class="section-head">Opening Paragraph</div>
+    <div class="field-row full"><div class="field">
+      <label>Why this role & company? (1–2 sentences)</label>
+      <textarea id="f_opening" placeholder="I am writing to apply for the Senior Product Manager role at Razorpay. With 5 years of experience building fintech products and a passion for solving payment challenges at scale, I am excited by the opportunity to contribute to Razorpay's mission." oninput="update()"></textarea>
+    </div></div>
+
+    <div class="section-head">Your Strengths (Middle Paragraph)</div>
+    <div class="field-row full"><div class="field">
+      <label>Relevant skills, experience & achievements</label>
+      <textarea id="f_body" placeholder="In my current role at PayU I have led a cross-functional team of 8 to launch 3 products serving 2M+ merchants. I reduced checkout drop-off by 18% through data-driven UX improvements, and launched a B2B BNPL product that generated ₹12Cr ARR in its first year. I bring strong experience in roadmap prioritisation, stakeholder management, and working closely with engineering and design teams." oninput="update()"></textarea>
+    </div></div>
+
+    <div class="section-head">Closing Paragraph</div>
+    <div class="field-row full"><div class="field">
+      <label>Call to action / enthusiasm for the role</label>
+      <textarea id="f_closing" placeholder="I would welcome the opportunity to discuss how my experience aligns with your team's goals. I am available for an interview at your convenience and look forward to the possibility of contributing to Razorpay's growth." oninput="update()"></textarea>
+    </div></div>
+
+    <div class="section-head">Sign-off</div>
+    <div class="field-row full"><div class="field">
+      <label>Closing Salutation</label>
+      <select id="f_signoff" onchange="update()">
+        <option>Sincerely</option>
+        <option>Yours sincerely</option>
+        <option>Warm regards</option>
+        <option>Best regards</option>
+        <option>Thank you</option>
+      </select>
+    </div></div>
+
+    <button class="btn-dl" onclick="window.print()">⬇️ Download as PDF</button>
+    <p style="font-size:11px; color:#999; text-align:center; margin-top:8px;">In the print dialog, select "Save as PDF" and A4 paper size</p>
+  </div>
+
+  <!-- PREVIEW -->
+  <div class="preview-panel">
+    <div class="preview-wrap">
+      <div class="preview-label">Live Preview — updates as you type</div>
+      <div class="letter-page tpl-classic" id="letter-preview"></div>
+    </div>
+  </div>
+</div>
+
+<!-- SEO -->
+<div class="seo-section">
+  <h2>Free Cover Letter Generator — Write a Professional Cover Letter in 2 Minutes</h2>
+  <p>A strong cover letter is your first impression — and it gets you to the interview. This free cover letter generator lets you fill in your details, choose from 3 formats (Classic, Modern, Minimal), preview instantly, and download as PDF. No signup, no watermark.</p>
+
+  <h3>How to write a cover letter</h3>
+  <ol>
+    <li><strong>Opening</strong>: State the role you're applying for and why you're excited about it. Mention something specific about the company that attracted you.</li>
+    <li><strong>Middle</strong>: Highlight 2–3 relevant achievements with numbers where possible (increased X by Y%, launched product serving Z users). Don't just restate your resume — add context and impact.</li>
+    <li><strong>Closing</strong>: Express enthusiasm and ask for the interview. Include a clear call to action.</li>
+    <li><strong>Sign-off</strong>: Use a professional closing (Sincerely, Warm regards) followed by your name.</li>
+  </ol>
+
+  <h3>Cover letter tips that actually work</h3>
+  <ul>
+    <li>Address it to a named person — "Dear Rahul" beats "Dear Hiring Manager" every time</li>
+    <li>Open with impact: your strongest relevant achievement, not "I am writing to apply"</li>
+    <li>Mirror the job description's language — use the same keywords they use</li>
+    <li>Keep it under 400 words — one page, 3 focused paragraphs</li>
+    <li>End with confidence: "I look forward to discussing" not "I hope you will consider"</li>
+  </ul>
+
+  <h3>Cover letter format for freshers</h3>
+  <p>If you have no work experience, lead with your academic project, internship, or a relevant personal project. Emphasise your skills, eagerness to learn, and any practical experience (hackathons, freelance work, open source contributions). Show that you've researched the company — name a specific product, initiative, or value that resonates with you.</p>
+
+  <details>
+    <summary>Do I need a cover letter if the job posting doesn't ask for one?</summary>
+    <p>A cover letter that isn't required but is well-written will always help. It shows initiative and effort. Skip it only if the application system has no field for it. When there is a field — even if marked optional — fill it in. Recruiters notice both.</p>
+  </details>
+  <details>
+    <summary>Should my cover letter match my resume design?</summary>
+    <p>Ideally yes — consistent fonts and header style looks professional and shows attention to detail. It signals that you've thought of your application as a cohesive package. Use the same template style in ResumeKit for your resume and this cover letter generator for the letter.</p>
+  </details>
+
+  <div style="margin-top:20px; font-size:12px; color:#555;">
+    Also try: <a href="../" style="color:#7c3aed;">Resume Builder</a> ·
+    <a href="https://nxtcraft.github.io/biodatakit/" style="color:#7c3aed;">Marriage Biodata</a> ·
+    <a href="https://nxtcraft.github.io/" style="color:#7c3aed;">All NxtCraft Tools</a>
+  </div>
+</div>
+
+<footer style="text-align:center; padding:20px; font-size:12px; color:#666; border-top:1px solid #e2e8f0;">
+  &copy; 2026 ResumeKit · <a href="https://nxtcraft.github.io/" style="color:#7c3aed;">NxtCraft Tools</a>
+</footer>
+
+<script>
+let currentTpl = 'classic';
+
+function setTpl(t) {
+  currentTpl = t;
+  document.querySelectorAll('.tpl-btn').forEach(b => b.classList.toggle('active', b.dataset.tpl === t));
+  update();
+}
+
+function v(id) { return (document.getElementById(id).value || '').trim(); }
+function escH(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>'); }
+
+// Set today's date default
+document.getElementById('f_date').value = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+
+function recipientBlock() {
+  const hm = v('f_hm');
+  const co = v('f_company');
+  const title = v('f_jobtitle');
+  let lines = [];
+  if (hm) lines.push(`<strong>${escH(hm)}</strong>`);
+  else lines.push('<strong>Hiring Manager</strong>');
+  if (co) lines.push(escH(co));
+  return lines.join('<br>');
+}
+
+function salutation() {
+  const hm = v('f_hm');
+  return 'Dear ' + (hm ? escH(hm.split(' ')[0]) : 'Hiring Manager') + ',';
+}
+
+function bodyParagraphs() {
+  const opening = v('f_opening');
+  const body = v('f_body');
+  const closing = v('f_closing');
+  const parts = [];
+  if (opening) parts.push(`<p>${escH(opening)}</p>`);
+  if (body) parts.push(`<p>${escH(body)}</p>`);
+  if (closing) parts.push(`<p>${escH(closing)}</p>`);
+  if (!parts.length) parts.push(
+    '<p style="color:#aaa;font-style:italic;">Fill in the paragraphs on the left to see your cover letter preview here.</p>'
+  );
+  return parts.join('');
+}
+
+function renderClassic() {
+  const name = v('f_name') || 'Your Name';
+  const infoParts = [v('f_email'), v('f_phone'), v('f_city'), v('f_url')].filter(Boolean);
+  return `
+  <div class="letter-header">
+    <div class="sender-name">${escH(name)}</div>
+    <div class="sender-info">${infoParts.map(escH).join(' · ')}</div>
+  </div>
+  <div class="letter-date">${escH(v('f_date'))}</div>
+  <div class="recipient">${recipientBlock()}</div>
+  <p><strong>${salutation()}</strong></p>
+  <div class="letter-body">${bodyParagraphs()}</div>
+  <div class="letter-sign">
+    <div>${escH(v('f_signoff') || 'Sincerely')},</div>
+    <div class="sign-name">${escH(name)}</div>
+    ${v('f_phone') ? `<div style="font-size:12px;color:#666;margin-top:2px;">${escH(v('f_phone'))}</div>` : ''}
+    ${v('f_email') ? `<div style="font-size:12px;color:#666;">${escH(v('f_email'))}</div>` : ''}
+  </div>`;
+}
+
+function renderModern() {
+  const name = v('f_name') || 'Your Name';
+  const infoParts = [v('f_email'), v('f_phone'), v('f_url')].filter(Boolean);
+  return `
+  <div class="letter-header">
+    <div>
+      <div class="sender-name">${escH(name)}</div>
+      <div class="sender-info">${infoParts.map(escH).join('<br>')}</div>
+    </div>
+    <div class="letter-date">${escH(v('f_date'))}<br><span style="color:#666;font-size:11.5px;">${escH(v('f_city'))}</span></div>
+  </div>
+  <div class="recipient">${recipientBlock()}</div>
+  <p><strong>${salutation()}</strong></p>
+  <div class="letter-body">${bodyParagraphs()}</div>
+  <div class="letter-sign">
+    <div>${escH(v('f_signoff') || 'Warm regards')},</div>
+    <div class="sign-name">${escH(name)}</div>
+  </div>`;
+}
+
+function renderMinimal() {
+  const name = v('f_name') || 'Your Name';
+  const infoParts = [v('f_email'), v('f_phone'), v('f_city')].filter(Boolean);
+  return `
+  <div class="letter-header">
+    <div class="sender-name">${escH(name)}</div>
+    <div class="sender-info">${infoParts.map(escH).join(' | ')}</div>
+  </div>
+  <div class="letter-date">${escH(v('f_date'))}</div>
+  <div class="recipient">${recipientBlock()}</div>
+  <p><strong>${salutation()}</strong></p>
+  <div class="letter-body">${bodyParagraphs()}</div>
+  <div class="letter-sign">
+    <div>${escH(v('f_signoff') || 'Sincerely')},</div>
+    <div class="sign-name">${escH(name)}</div>
+    ${v('f_phone') ? `<div style="font-size:12px;color:#555;margin-top:2px;">${escH(v('f_phone'))}</div>` : ''}
+  </div>`;
+}
+
+function update() {
+  const el = document.getElementById('letter-preview');
+  el.className = 'letter-page tpl-' + currentTpl;
+  el.innerHTML = currentTpl === 'classic' ? renderClassic()
+    : currentTpl === 'modern' ? renderModern()
+    : renderMinimal();
+}
+
+update();
+</script>
+</body>
+</html>
