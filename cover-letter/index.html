@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Analytics 4 — replace G-XXXXXXXXXX with your Measurement ID -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-XXXXXXXXXX");</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cover Letter Generator — Free Template & Builder | ResumeKit</title>
@@ -137,6 +140,7 @@ details p { padding: 0 14px 12px; font-size: 13px; color: #555; line-height: 1.7
     <a class="nav-logo" href="../">Resume<span>Kit</span></a>
     <a href="../" style="font-size:13px; color:rgba(255,255,255,.7); text-decoration:none; margin-left:16px;">← Resume Builder</a>
     <span style="font-size:13px; color:white; margin-left:16px; font-weight:600;">Cover Letter</span>
+    <span id="cl-saved" style="font-size:11px;color:rgba(255,255,255,.9);background:rgba(255,255,255,.15);padding:3px 10px;border-radius:20px;opacity:0;transition:opacity .4s;font-weight:600;margin-left:auto;white-space:nowrap;">✓ Saved</span>
   </nav>
 </div>
 
@@ -268,8 +272,7 @@ function setTpl(t) {
 function v(id) { return (document.getElementById(id).value || '').trim(); }
 function escH(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>'); }
 
-// Set today's date default
-document.getElementById('f_date').value = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+// date default is set after draft load attempt
 
 function recipientBlock() {
   const hm = v('f_hm');
@@ -360,14 +363,45 @@ function renderMinimal() {
   </div>`;
 }
 
+const CL_FIELDS = ['f_name','f_email','f_phone','f_url','f_city','f_jobtitle','f_company','f_hm','f_date','f_opening','f_body','f_closing','f_signoff'];
+let _clTimer;
+
+function clAutosave() {
+  clearTimeout(_clTimer);
+  _clTimer = setTimeout(() => {
+    try {
+      const data = { _tpl: currentTpl };
+      CL_FIELDS.forEach(id => { const el = document.getElementById(id); if (el) data[id] = el.value; });
+      localStorage.setItem('cl_draft', JSON.stringify(data));
+      const ind = document.getElementById('cl-saved');
+      if (ind) { ind.style.opacity='1'; setTimeout(()=>{ind.style.opacity='0';},2000); }
+    } catch(e) {}
+  }, 400);
+}
+
+function clLoadDraft() {
+  try {
+    const raw = localStorage.getItem('cl_draft');
+    if (!raw) return false;
+    const data = JSON.parse(raw);
+    CL_FIELDS.forEach(id => { const el = document.getElementById(id); if (el && data[id] !== undefined) el.value = data[id]; });
+    if (data._tpl) setTpl(data._tpl);
+    return true;
+  } catch(e) { return false; }
+}
+
 function update() {
   const el = document.getElementById('letter-preview');
   el.className = 'letter-page tpl-' + currentTpl;
   el.innerHTML = currentTpl === 'classic' ? renderClassic()
     : currentTpl === 'modern' ? renderModern()
     : renderMinimal();
+  clAutosave();
 }
 
+if (!clLoadDraft()) {
+  document.getElementById('f_date').value = new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+}
 update();
 </script>
 </body>

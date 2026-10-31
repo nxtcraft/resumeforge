@@ -307,7 +307,11 @@ async function downloadPDF() {
 
 // ── AUTOSAVE / LOAD ──
 function autosave(d) {
-  try { localStorage.setItem('rk_data', JSON.stringify(d)); } catch(e) {}
+  try {
+    localStorage.setItem('rk_data', JSON.stringify({ ...d, customSections: resumeCustomSections }));
+    const el = document.getElementById('rk-saved');
+    if (el) { el.style.opacity='1'; setTimeout(()=>{el.style.opacity='0';},2000); }
+  } catch(e) {}
 }
 
 function loadSaved() {
@@ -327,6 +331,19 @@ function loadSaved() {
     if (d.edu?.length) { state.edu = d.edu; renderEduList(); }
     if (d.template) selectTemplate(d.template);
     if (d.color) { state.color = d.color; buildColorRow(); }
+    if (d.customSections?.length) {
+      resumeCustomSections = [];
+      d.customSections.filter(Boolean).forEach(s => {
+        const idx = resumeCustomSections.length;
+        resumeCustomSections.push({ title: s.title||'', content: s.content||'' });
+        const list = document.getElementById('resume-custom-sections');
+        const div = document.createElement('div');
+        div.id = 'rcs-row-' + idx;
+        div.style.cssText = 'background:#f8f7ff;border:1px solid #e0d9ff;border-radius:10px;padding:12px;margin-bottom:10px;';
+        div.innerHTML = `<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;"><span style="font-size:11px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:.5px;">Custom Section ${idx+1}</span><button onclick="removeResumeSection(${idx})" style="background:none;border:none;cursor:pointer;font-size:14px;color:#888;">🗑</button></div><div class="field"><label>Section Title</label><input type="text" placeholder="e.g. Certifications" value="${escHtml(s.title||'')}" oninput="updateRCS(${idx},'title',this.value)"></div><div class="field"><label>Content</label><textarea rows="3" placeholder="Enter content for this section..." oninput="updateRCS(${idx},'content',this.value)">${escHtml(s.content||'')}</textarea></div>`;
+        list.appendChild(div);
+      });
+    }
     render();
   } catch(e) {}
 }
