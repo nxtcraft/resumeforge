@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Build a Resume + ATS Score — Step by Step Guide | ResumeKit</title>
+<meta name="description" content="Step-by-step guide to building a job resume and checking your ATS score. See exactly how to fill each section with real examples. Download as PDF free.">
+<meta name="keywords" content="how to make a resume, resume kaise banaye, ATS resume checker, how to check ATS score, resume banane ka tarika, resume format with example, how to write resume for job, ATS keyword checker free">
+<link rel="canonical" href="https://nxtcraft.github.io/resumekit/guide/">
+<meta property="og:title" content="How to Build a Resume + Check ATS Score — Step by Step Guide">
+<meta property="og:description" content="Build a professional resume and check your ATS keyword score free. See filled examples for every section.">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Create a Resume and Check ATS Score",
+  "description": "Step-by-step guide to building a job resume and checking ATS compatibility using ResumeKit",
+  "totalTime": "PT15M",
+  "step": [
+    { "@type": "HowToStep", "name": "Choose a template", "text": "Open ResumeKit and pick from Classic, Modern, or Compact template based on the job and industry." },
+    { "@type": "HowToStep", "name": "Fill contact details", "text": "Add your full name, email, phone, LinkedIn URL, city and job title." },
+    { "@type": "HowToStep", "name": "Write a professional summary", "text": "2-3 sentence summary of your experience, skills, and what you offer. This is the first thing recruiters read." },
+    { "@type": "HowToStep", "name": "Add work experience", "text": "List jobs from most recent to oldest. For each: job title, company, dates, and 3-4 bullet points of achievements." },
+    { "@type": "HowToStep", "name": "Add education", "text": "Add your highest qualification first, with institution, year, and percentage/CGPA." },
+    { "@type": "HowToStep", "name": "Add skills", "text": "List technical and soft skills relevant to the roles you're applying to." },
+    { "@type": "HowToStep", "name": "Check ATS score", "text": "Paste a job description in the ATS tab. The tool shows matched keywords and missing keywords from your resume." },
+    { "@type": "HowToStep", "name": "Download as PDF", "text": "Click the Download PDF button. In the browser print dialog, select Save as PDF with A4 paper size." }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an ATS score and why does it matter?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ATS stands for Applicant Tracking System — software that most companies use to automatically filter resumes before a human reads them. It scans your resume for keywords from the job description. A higher ATS match means your resume is more likely to be shortlisted. Aim for 70%+ match for the specific job you're applying to." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I improve my ATS score?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Paste the job description in the ATS tab and look at the 'Missing Keywords' list. Add those keywords naturally to your resume — in your skills section, experience bullets, or summary. Don't stuff keywords randomly; use them in context. Re-check your score after updating." }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I use one resume for all jobs?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No — a tailored resume outperforms a generic one significantly. Keep a master resume with all your experience. For each job application, copy it, then adjust: update the summary to mention the role, reorder or add skills that match the JD, and tweak bullet points to reflect the job's priorities. The ATS checker shows you exactly what to add." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good resume length?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For most jobs: 1 page if you have under 5 years of experience, 2 pages if you have 5–15 years. For senior or academic roles, longer is acceptable. Recruiters spend ~6 seconds on a first scan, so the most important information should be near the top." }
+    }
+  ]
+}
+</script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', -apple-system, sans-serif; background: #f8f7ff; color: #1a1a2e; }
+.site-header { background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%); color: white; padding: 14px 24px; }
+.logo { font-size: 20px; font-weight: 800; }
+.logo a { color: white; text-decoration: none; }
+.logo span { opacity: .7; }
+.container { max-width: 820px; margin: 0 auto; padding: 32px 20px 60px; }
+.breadcrumb { font-size: 12px; color: #3b82f6; margin-bottom: 20px; }
+.breadcrumb a { color: #3b82f6; text-decoration: none; }
+h1 { font-size: 26px; font-weight: 800; margin-bottom: 8px; }
+.subtitle { font-size: 14px; color: #555; margin-bottom: 32px; line-height: 1.6; }
+.step-card { background: white; border-radius: 14px; padding: 22px 24px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(30,64,175,.08); border-left: 4px solid #3b82f6; }
+.step-num { font-size: 11px; font-weight: 700; color: #3b82f6; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+.step-title { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+.step-body { font-size: 14px; color: #333; line-height: 1.7; }
+.example-box { background: #eff6ff; border-radius: 10px; padding: 14px 16px; margin-top: 12px; font-size: 13px; }
+.example-box strong { color: #1e40af; display: block; margin-bottom: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; }
+.example-row { display: flex; gap: 12px; margin-bottom: 4px; }
+.ex-label { color: #555; min-width: 140px; flex-shrink: 0; }
+.ex-val { color: #1a1a2e; font-weight: 600; }
+.ats-demo { background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 10px; padding: 14px 16px; margin-top: 12px; font-size: 13px; }
+.ats-demo strong { color: #166534; display: block; margin-bottom: 8px; font-size: 11px; text-transform: uppercase; letter-spacing: .5px; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+.chip-found { background: #dcfce7; color: #166534; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.chip-missing { background: #ffedd5; color: #9a3412; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.score-pill { display: inline-block; background: #22c55e; color: white; padding: 4px 14px; border-radius: 20px; font-weight: 700; font-size: 14px; margin-bottom: 8px; }
+.tip-box { background: #fef3c7; border-left: 3px solid #f59e0b; border-radius: 8px; padding: 12px 14px; margin-top: 12px; font-size: 13px; color: #92400e; line-height: 1.6; }
+.cta-box { background: linear-gradient(135deg,#1e40af,#3b82f6); color: white; border-radius: 16px; padding: 28px 32px; text-align: center; margin: 36px 0; }
+.cta-box h2 { font-size: 20px; margin-bottom: 8px; }
+.cta-box p { font-size: 13px; opacity: .85; margin-bottom: 16px; }
+.cta-btn { display: inline-block; background: white; color: #1e40af; padding: 12px 28px; border-radius: 10px; font-weight: 700; font-size: 15px; text-decoration: none; }
+h2 { font-size: 20px; font-weight: 700; margin: 36px 0 16px; }
+details { border: 1px solid #bfdbfe; border-radius: 8px; overflow: hidden; margin-bottom: 10px; }
+details summary { padding: 13px 16px; cursor: pointer; font-weight: 600; font-size: 14px; }
+details p { padding: 0 16px 14px; font-size: 13px; color: #555; line-height: 1.7; }
+footer { text-align: center; padding: 20px; font-size: 12px; color: #3b82f6; border-top: 1px solid #bfdbfe; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="site-header">
+  <div class="logo"><a href="../">Resume<span>Kit</span></a></div>
+</div>
+
+<div class="container">
+  <div class="breadcrumb"><a href="../">ResumeKit</a> › How to Use</div>
+  <h1>How to Build a Resume + Check ATS Score</h1>
+  <p class="subtitle">Build a professional resume with a real filled example, then check your ATS match against any job description — all free, no signup.</p>
+
+  <div class="step-card">
+    <div class="step-num">Step 1</div>
+    <div class="step-title">Choose a template</div>
+    <div class="step-body">
+      Open ResumeKit. Pick a template that matches the job:
+      <ul style="margin:8px 0 0 18px; line-height:2.2;">
+        <li><strong>Classic</strong> — Clean and traditional. Works for all industries. Best for formal roles (finance, government, law).</li>
+        <li><strong>Modern</strong> — Left-sidebar with colour accent. Great for tech, design, and product roles.</li>
+        <li><strong>Compact</strong> — Dense format fitting more content on one page. Good if you have 5+ years of experience.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">Step 2</div>
+    <div class="step-title">Fill your contact information</div>
+    <div class="step-body">
+      <div class="example-box">
+        <strong>Example — filled contact details</strong>
+        <div class="example-row"><span class="ex-label">Full Name</span><span class="ex-val">Arjun Mehta</span></div>
+        <div class="example-row"><span class="ex-label">Job Title (headline)</span><span class="ex-val">Full Stack Developer</span></div>
+        <div class="example-row"><span class="ex-label">Email</span><span class="ex-val">arjun.mehta@gmail.com</span></div>
+        <div class="example-row"><span class="ex-label">Phone</span><span class="ex-val">+91 98765 43210</span></div>
+        <div class="example-row"><span class="ex-label">LinkedIn</span><span class="ex-val">linkedin.com/in/arjunmehta</span></div>
+        <div class="example-row"><span class="ex-label">City</span><span class="ex-val">Bengaluru, India</span></div>
+      </div>
+      <div class="tip-box">💡 Use a professional email (gmail preferred). Never use a college email that may expire. Adding a GitHub or portfolio URL is strongly recommended for tech roles.</div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">Step 3</div>
+    <div class="step-title">Write a professional summary</div>
+    <div class="step-body">
+      2–3 sentences at the top. This is the first thing a recruiter reads. Mention your years of experience, key skills, and what you're looking for.
+      <div class="example-box">
+        <strong>Example summary</strong>
+        <div style="color:#1a1a2e; line-height:1.8;">Full-stack developer with 4 years of experience building scalable web applications using React, Node.js, and PostgreSQL. Delivered 3 production SaaS products serving 10,000+ monthly users. Seeking a senior engineering role where I can contribute to product architecture and mentor junior developers.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">Step 4</div>
+    <div class="step-title">Add work experience</div>
+    <div class="step-body">
+      List from most recent to oldest. Use action verbs and include measurable outcomes wherever possible.
+      <div class="example-box">
+        <strong>Example — one work experience entry</strong>
+        <div class="example-row"><span class="ex-label">Job Title</span><span class="ex-val">Software Engineer (SDE-2)</span></div>
+        <div class="example-row"><span class="ex-label">Company</span><span class="ex-val">Razorpay, Bengaluru</span></div>
+        <div class="example-row"><span class="ex-label">Duration</span><span class="ex-val">Jun 2022 – Present</span></div>
+        <div style="margin-top:8px; color:#1a1a2e;">
+          <div>• Built checkout flow reducing drop-off rate by 18% using React + Redis caching</div>
+          <div>• Led migration from monolith to microservices for 3 internal APIs, reducing latency by 40%</div>
+          <div>• Reviewed code for a team of 5, reducing critical bugs in production by 60%</div>
+        </div>
+      </div>
+      <div class="tip-box">💡 <strong>Action verbs to use:</strong> Built · Designed · Led · Reduced · Improved · Launched · Migrated · Automated · Mentored · Increased</div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">Step 5</div>
+    <div class="step-title">Add education and skills</div>
+    <div class="step-body">
+      <div class="example-box">
+        <strong>Example — education</strong>
+        <div class="example-row"><span class="ex-label">Degree</span><span class="ex-val">B.Tech, Computer Science</span></div>
+        <div class="example-row"><span class="ex-label">Institution</span><span class="ex-val">NIT Trichy</span></div>
+        <div class="example-row"><span class="ex-label">Year</span><span class="ex-val">2018 – 2022</span></div>
+        <div class="example-row"><span class="ex-label">Score</span><span class="ex-val">8.4 CGPA</span></div>
+      </div>
+      <div class="example-box" style="margin-top:10px;">
+        <strong>Example — skills section</strong>
+        <div style="color:#1a1a2e; line-height:2;">React · Node.js · TypeScript · PostgreSQL · Redis · AWS · Docker · Git · REST APIs · GraphQL · Agile/Scrum</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">Step 6 — Add custom sections (optional)</div>
+    <div class="step-title">Add certifications, projects, or anything extra</div>
+    <div class="step-body">
+      Scroll down to <strong>"Add Custom Section"</strong>. Enter a section title and content. Common additions:
+      <div class="example-box">
+        <strong>Example custom sections</strong>
+        <div class="example-row"><span class="ex-label">Section Title</span><span class="ex-val">Certifications</span></div>
+        <div style="color:#1a1a2e; margin-bottom:10px;">AWS Certified Developer – Associate (2023) · Google Professional Cloud Developer (2024)</div>
+        <div class="example-row"><span class="ex-label">Section Title</span><span class="ex-val">Key Projects</span></div>
+        <div style="color:#1a1a2e; margin-bottom:10px;">QuickShip (Open Source): Logistics tracking dashboard built with Next.js + Supabase · 400 GitHub stars</div>
+        <div class="example-row"><span class="ex-label">Section Title</span><span class="ex-val">Languages</span></div>
+        <div style="color:#1a1a2e;">English (Fluent) · Hindi (Native) · Kannada (Working proficiency)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">Step 7 — Key Feature</div>
+    <div class="step-title">Check your ATS score against a job description</div>
+    <div class="step-body">
+      Click the <strong style="color:#16a34a;">ATS ✓</strong> tab at the top. Paste the job description you want to apply to in the text area. Click <strong>Check ATS Score</strong>.
+      <div class="ats-demo">
+        <strong>Example ATS result — "Senior Frontend Engineer" role at Flipkart</strong>
+        <div class="score-pill">Match: 72%</div>
+        <div style="margin-bottom:4px; font-size:12px; color:#166534; font-weight:600;">Keywords Found in Your Resume</div>
+        <div class="chip-row">
+          <span class="chip-found">react</span><span class="chip-found">typescript</span><span class="chip-found">rest api</span>
+          <span class="chip-found">performance</span><span class="chip-found">testing</span><span class="chip-found">agile</span>
+          <span class="chip-found">web application</span><span class="chip-found">git</span>
+        </div>
+        <div style="margin:10px 0 4px; font-size:12px; color:#9a3412; font-weight:600;">Missing Keywords — add these to your resume</div>
+        <div class="chip-row">
+          <span class="chip-missing">webpack</span><span class="chip-missing">accessibility</span>
+          <span class="chip-missing">micro frontend</span><span class="chip-missing">jest</span><span class="chip-missing">storybook</span>
+        </div>
+      </div>
+      <div class="tip-box">💡 Add the missing keywords naturally into your existing bullet points or skills section. For example, add "Jest" to your testing tools list and "Webpack" to your tooling experience. Then re-check — your score will go up.</div>
+    </div>
+  </div>
+
+  <div class="step-card">
+    <div class="step-num">Step 8</div>
+    <div class="step-title">Download as PDF</div>
+    <div class="step-body">
+      Click <strong>"⬇️ Download PDF"</strong> at the top-right of the preview. In the browser print dialog:
+      <ul style="margin:8px 0 0 18px; line-height:2;">
+        <li>Destination: <strong>Save as PDF</strong></li>
+        <li>Paper size: <strong>A4</strong></li>
+        <li>Margins: <strong>Default</strong></li>
+        <li>Uncheck <strong>"Headers and footers"</strong></li>
+      </ul>
+      <div class="tip-box">💡 Save a separate PDF for each company you apply to (e.g. Resume_Flipkart.pdf, Resume_Google.pdf). Tailored resumes get 2–3× more callbacks.</div>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h2>Build your resume now</h2>
+    <p>Free forever · No signup · Download as PDF instantly</p>
+    <a href="../" class="cta-btn">Open ResumeKit →</a>
+  </div>
+
+  <h2>Frequently Asked Questions</h2>
+  <details><summary>What is an ATS and how does it work?</summary><p>ATS (Applicant Tracking System) is software used by companies to filter resumes automatically. It extracts keywords from the job description and checks if your resume contains them. Resumes that don't match enough keywords are filtered out before any human reads them. Our ATS checker replicates this process client-side so you can optimise your resume before submitting.</p></details>
+  <details><summary>Is my resume stored on ResumeKit's servers?</summary><p>No. Everything runs in your browser. Your data is never sent to any server. When you close the tab, the data is cleared. For this reason, copy your text to a document elsewhere if you want to save it between sessions.</p></details>
+  <details><summary>Can I write a cover letter here too?</summary><p>Yes — ResumeKit includes a Cover Letter builder. The nav bar at the top has a ✉️ Cover Letter link. It follows the same workflow: fill the form, pick a template, download as PDF.</p></details>
+  <details><summary>Should I include a photo in my resume?</summary><p>In India, including a photo is common and often expected. In the US, UK, or Europe, photos are generally not included to avoid bias. Choose based on the country/company you're applying to.</p></details>
+
+  <div style="margin-top:28px; font-size:12px; color:#3b82f6;">
+    Also try: <a href="https://nxtcraft.github.io/biodatakit/" style="color:#3b82f6;">BiodataKit — Marriage Biodata</a> ·
+    <a href="https://nxtcraft.github.io/" style="color:#3b82f6;">All NxtCraft Tools</a>
+  </div>
+</div>
+
+<footer>&copy; 2026 ResumeKit · <a href="https://nxtcraft.github.io/" style="color:#3b82f6;">NxtCraft Tools</a></footer>
+</body>
+</html>

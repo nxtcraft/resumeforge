@@ -7,6 +7,40 @@ let state = {
   edu: [],
 };
 
+let resumeCustomSections = [];
+
+function addResumeSection() {
+  const idx = resumeCustomSections.length;
+  resumeCustomSections.push({ title: '', content: '' });
+  const list = document.getElementById('resume-custom-sections');
+  const div = document.createElement('div');
+  div.id = 'rcs-row-' + idx;
+  div.style.cssText = 'background:#f8f7ff;border:1px solid #e0d9ff;border-radius:10px;padding:12px;margin-bottom:10px;';
+  div.innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+      <span style="font-size:11px;font-weight:700;color:#7c3aed;text-transform:uppercase;letter-spacing:.5px;">Custom Section ${idx+1}</span>
+      <button onclick="removeResumeSection(${idx})" style="background:none;border:none;cursor:pointer;font-size:14px;color:#888;">🗑</button>
+    </div>
+    <div class="field"><label>Section Title</label><input type="text" placeholder="e.g. Certifications" oninput="updateRCS(${idx},'title',this.value)"></div>
+    <div class="field"><label>Content</label><textarea rows="3" placeholder="Enter content for this section..." oninput="updateRCS(${idx},'content',this.value)"></textarea></div>`;
+  list.appendChild(div);
+}
+
+function updateRCS(idx, key, val) { resumeCustomSections[idx][key] = val; render(); }
+function removeResumeSection(idx) {
+  resumeCustomSections[idx] = null;
+  const el = document.getElementById('rcs-row-' + idx);
+  if (el) el.remove();
+  render();
+}
+function getCustomSectionsHTML(accentColor) {
+  return resumeCustomSections.filter(Boolean).filter(s => s.title || s.content).map(s => `
+    <div class="resume-section">
+      <div class="section-title" style="color:${accentColor}">${escH(s.title)}</div>
+      <div style="font-size:12px;line-height:1.7;">${escH(s.content)}</div>
+    </div>`).join('');
+}
+
 const COLORS = ['#7c3aed','#2563eb','#0891b2','#059669','#dc2626','#d97706','#1e293b','#6b7280'];
 
 // ── INIT ──
@@ -185,6 +219,7 @@ function renderClassic(d) {
       ${d.certs ? `<div class="section"><div class="section-title" style="border-color:${d.color};color:${d.color}">Certifications</div><div style="font-size:9.5pt;color:#333">${escH(d.certs)}</div></div>` : ''}
       ${biodataBlock(d)}
       ${d.hobbies ? `<div class="section"><div class="section-title" style="border-color:${d.color};color:${d.color}">Interests</div><div style="font-size:9.5pt;color:#555">${escH(d.hobbies)}</div></div>` : ''}
+      ${getCustomSectionsHTML(d.color).replace(/class="resume-section"/g,'class="section"').replace(/class="section-title"/g,`class="section-title" style="border-color:${d.color};color:${d.color}"`)}
     </div>
   `;
 }
@@ -213,6 +248,7 @@ function renderModern(d) {
         ${d.edu.some(e=>e.degree) ? `<div class="section"><div class="section-title" style="border-color:${d.color};color:${d.color}">Education</div>${eduItems(d.edu)}</div>` : ''}
         ${d.certs ? `<div class="section"><div class="section-title" style="border-color:${d.color};color:${d.color}">Certifications</div><div class="item-desc">${escH(d.certs)}</div></div>` : ''}
         ${d.projects ? `<div class="section"><div class="section-title" style="border-color:${d.color};color:${d.color}">Projects</div>${d.projects.split('\n').filter(Boolean).map(l=>`<div class="item-desc" style="margin-bottom:4px">• ${escH(l)}</div>`).join('')}</div>` : ''}
+        ${getCustomSectionsHTML(d.color).replace(/class="resume-section"/g,'class="section"').replace(/class="section-title"/g,`class="section-title" style="border-color:${d.color};color:${d.color}"`)}
       </div>
     </div>
   `;
@@ -234,6 +270,7 @@ function renderMinimal(d) {
       ${d.certs ? `<div class="section"><div class="section-title" style="color:${d.color}">Certifications</div><div style="font-size:9.5pt;color:#475569">${escH(d.certs)}</div></div>` : ''}
       ${biodataBlock(d)}
       ${d.hobbies ? `<div class="section"><div class="section-title" style="color:${d.color}">Interests</div><div style="font-size:9.5pt;color:#64748b">${escH(d.hobbies)}</div></div>` : ''}
+      ${getCustomSectionsHTML(d.color).replace(/class="resume-section"/g,'class="section"').replace(/class="section-title"/g,`class="section-title" style="color:${d.color}"`)}
     </div>
   `;
 }
