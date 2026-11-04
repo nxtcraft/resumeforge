@@ -1,15 +1,17 @@
 {
-  "name": "ResumeForge – Free Resume Builder",
+  "name": "ResumeForge",
   "short_name": "ResumeForge",
-  "description": "Build and download a professional resume PDF for free. No signup needed.",
-  "start_url": "/resumeforge/",
-  "scope": "/resumeforge/",
+  "description": "Free Resume Builder PDF Download",
+  "start_url": "https://nxtcraft.github.io/resumeforge/",
   "display": "standalone",
-  "orientation": "portrait",
-  "theme_color": "#7c3aed",
-  "background_color": "#ffffff",
+  "background_color": "#0f172a",
+  "theme_color": "#8b5cf6",
   "icons": [
-    { "src": "https://nxtcraft.github.io/resumeforge/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "https://nxtcraft.github.io/resumeforge/icon-512.png", "sizes": "512x512", "type": "image/png" }
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='#8b5cf6'/><text y='.9em' font-size='80' text-anchor='middle' x='50'>👤</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
   ]
 }
